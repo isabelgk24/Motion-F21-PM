@@ -403,6 +403,12 @@ textarea {
 /* =============
     Header
 ============= */
+header {
+  position: fixed;
+  border: 1px solid red;
+  background-color: #fff;
+  width: 100%;
+}
 /* =============
     Footer
 ============= */
