@@ -1,19 +1,52 @@
 // Content
 
 #content1{
-    display: grid;
-    grid-template-columns: auto 1400px auto;
-    grid-template-areas: ". content .";
-    grid-area: content;
-    
-    // grid-template-columns: auto 25% 30px 25% 30px 25% auto;
-    // grid-template-areas: ". book . friends . invoice .";
-    border: 2px solid red ;
 
-    // @include xl{
-    //     grid-template-columns: auto 1440px auto;
-    //     grid-template-areas: ". book . friends . invoice .";
-    // }
+    padding: 8vh;
+
+    @include md {
+        display: grid;
+        grid-template-columns: 16px auto 16px;
+        grid-template-areas: ". content1 .";
+    }
+    @include xl {
+        display: grid;
+        grid-template-columns: auto 1440px auto;
+        grid-template-areas: ". content1 .";
+    }
+
+    ul {
+        display: grid;
+        grid-area: content1;
+        gap: 3vw;
+
+
+        @include md {
+            display: grid;
+            grid-template-columns: repeat (3, 1fr);
+            grid-template-areas: "book friends invoice";
+        }
+
+        li{
+            text-align: center;
+            p{
+                font-family: Heebo;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 26px;
+            }
+            i{
+                font-size: 30px;
+                padding-bottom: 1vw;
+                @include md{
+                    font-size: 40px;
+                }
+                @include lg{
+                    font-size: 50px;
+                }
+            }
+        }
 
     #book{
         grid-area: book;
@@ -24,5 +57,4 @@
     #invoice{
         grid-area: invoice;
     }
-
-}
+} }

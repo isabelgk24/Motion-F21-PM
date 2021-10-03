@@ -412,9 +412,14 @@ nav ul {
   justify-content: flex-end;
   align-items: center;
   height: 100%;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
 }
 nav ul li {
-  margin-left: 4vw;
+  margin-right: 4vw;
 }
 nav ul li a:link, nav ul li a:visited {
   font-family: "Heebo", sans-serif;
@@ -445,7 +450,7 @@ header > div {
 /* =============
     Footer
 ============= */
-footer {
+footer div {
   width: 100%;
   color: black;
 }
@@ -510,18 +515,64 @@ footer {
 }
 
 #content1 {
-  display: grid;
-  grid-template-columns: auto 1400px auto;
-  grid-template-areas: ". content .";
-  grid-area: content;
-  border: 2px solid red;
+  padding: 8vh;
 }
-#content1 #book {
+@media (min-width: 768px) {
+  #content1 {
+    display: grid;
+    grid-template-columns: 16px auto 16px;
+    grid-template-areas: ". content1 .";
+  }
+}
+@media (min-width: 1440px) {
+  #content1 {
+    display: grid;
+    grid-template-columns: auto 1440px auto;
+    grid-template-areas: ". content1 .";
+  }
+}
+#content1 ul {
+  display: grid;
+  grid-area: content1;
+  gap: 3vw;
+}
+@media (min-width: 768px) {
+  #content1 ul {
+    display: grid;
+    grid-template-columns: repeat 3, 1fr;
+    grid-template-areas: "book friends invoice";
+  }
+}
+#content1 ul li {
+  text-align: center;
+}
+#content1 ul li p {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+#content1 ul li i {
+  font-size: 30px;
+  padding-bottom: 1vw;
+}
+@media (min-width: 768px) {
+  #content1 ul li i {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  #content1 ul li i {
+    font-size: 50px;
+  }
+}
+#content1 ul #book {
   grid-area: book;
 }
-#content1 #friends {
+#content1 ul #friends {
   grid-area: friends;
 }
-#content1 #invoice {
+#content1 ul #invoice {
   grid-area: invoice;
 }
