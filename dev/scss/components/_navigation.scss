@@ -1,3 +1,32 @@
 /* =============
     Navigation
 ============= */
+
+nav {
+    height: 100%;
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+
+        li{
+
+            margin-left: 4vw;
+
+            a:link, a:visited{
+                font-family: 'Heebo', sans-serif;
+                color: black;
+                transition: 0.25s;
+                font-size: 24;
+                font-weight: 500;
+
+                &:hover, &:active{
+                    color: $navy;
+                }
+
+            }
+        }
+    }
+
+}

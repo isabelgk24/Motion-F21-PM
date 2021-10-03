@@ -2,19 +2,20 @@
     Header
 ============= */
 
-header{
+header {
 
     position: fixed;
-    border: 1px solid red;
+    // border: 1px solid red;
     background-color: $white;
     width: 100%;
+    z-index: 100;
 
-    >div{
-        aside{
+    >div {
 
-        }
-        section{
-
-        }
+        display: grid;
+        grid-template-columns: 5% auto;
+        padding: 8px 16px;
+        
     }
+    
 }

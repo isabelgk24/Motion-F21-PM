@@ -2,10 +2,6 @@
     Mixins
 ============= */
 /* ---------------- Font Sizing ---------------- */
-html {
-  font-size: 100%;
-}
-
 /* ---------------- Media Queries ---------------- */
 /* =============
     Variables
@@ -365,37 +361,23 @@ ul li {
   list-style: none;
 }
 
-.container-grid {
-  display: grid;
-  grid-template-areas: ". grid-content .";
-  grid-template-columns: 15px auto 15px;
-  height: 100vh;
-}
-@media (min-width: 1200px) {
-  .container-grid {
-    grid-template-columns: auto 1200px auto;
-  }
-}
-.container-grid > div {
-  grid-area: grid-content;
+a {
+  text-decoration: none;
 }
 
 /* =============
     Typography
 ============= */
-h1, h2, h3, h4 {
+body {
+  font-family: "Heebo", sans-serif;
+}
+body h1, body h2, body h3, body h4 {
   margin: 0;
   padding: 0;
 }
-
-p {
+body p {
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 6.25rem;
-  color: red;
 }
 
 /* =============
@@ -422,9 +404,48 @@ textarea {
 /* =============
     Navigation
 ============= */
+nav {
+  height: 100%;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+nav ul li {
+  margin-left: 4vw;
+}
+nav ul li a:link, nav ul li a:visited {
+  font-family: "Heebo", sans-serif;
+  color: black;
+  transition: 0.25s;
+  font-size: 24;
+  font-weight: 500;
+}
+nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
+  color: #001A76;
+}
+
 /* =============
     Header
 ============= */
+header {
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 100;
+}
+header > div {
+  display: grid;
+  grid-template-columns: 5% auto;
+  padding: 8px 16px;
+}
+
 /* =============
     Footer
 ============= */
+footer {
+  width: 100%;
+  color: black;
+}
