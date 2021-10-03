@@ -450,13 +450,13 @@ header > div {
 /* =============
     Footer
 ============= */
-footer div {
-  width: 100%;
-  color: black;
+footer {
+  padding: 64px;
+  background-color: black;
 }
 
 #hero {
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   overflow: hidden;
 }
