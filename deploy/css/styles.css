@@ -449,3 +449,62 @@ footer {
   width: 100%;
   color: black;
 }
+
+#hero {
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 1440px) {
+  #hero {
+    display: grid;
+    grid-template-areas: ". hero .";
+    grid-template-columns: auto 1440px auto;
+  }
+}
+#hero > div {
+  align-items: center;
+  background-image: url("../img/hero/globe.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+@media (min-width: 1440px) {
+  #hero > div {
+    grid-area: hero;
+  }
+}
+#hero > div #hero-content {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+#hero > div #hero-content h1 {
+  margin-top: 2vh;
+}
+#hero > div #hero-content i {
+  font-size: 40px;
+}
+@media (min-width: 768px) {
+  #hero > div #hero-content i {
+    font-size: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  #hero > div #hero-content i {
+    font-size: 80px;
+  }
+}
+@media (min-width: 768px) {
+  #hero > div #hero-content {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  #hero > div #hero-content {
+    font-size: 60px;
+  }
+}
