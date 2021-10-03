@@ -508,3 +508,20 @@ footer {
     font-size: 60px;
   }
 }
+
+#content1 {
+  display: grid;
+  grid-template-columns: auto 1400px auto;
+  grid-template-areas: ". content .";
+  grid-area: content;
+  border: 2px solid red;
+}
+#content1 #book {
+  grid-area: book;
+}
+#content1 #friends {
+  grid-area: friends;
+}
+#content1 #invoice {
+  grid-area: invoice;
+}

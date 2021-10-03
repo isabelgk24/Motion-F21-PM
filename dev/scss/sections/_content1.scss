@@ -1,0 +1,28 @@
+// Content
+
+#content1{
+    display: grid;
+    grid-template-columns: auto 1400px auto;
+    grid-template-areas: ". content .";
+    grid-area: content;
+    
+    // grid-template-columns: auto 25% 30px 25% 30px 25% auto;
+    // grid-template-areas: ". book . friends . invoice .";
+    border: 2px solid red ;
+
+    // @include xl{
+    //     grid-template-columns: auto 1440px auto;
+    //     grid-template-areas: ". book . friends . invoice .";
+    // }
+
+    #book{
+        grid-area: book;
+    }
+    #friends{
+        grid-area: friends;
+    }
+    #invoice{
+        grid-area: invoice;
+    }
+
+}
