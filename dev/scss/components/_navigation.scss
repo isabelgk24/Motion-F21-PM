@@ -13,7 +13,7 @@ nav {
         font-family: Heebo;
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 35px;
 
         li{
@@ -24,8 +24,8 @@ nav {
                 font-family: 'Heebo', sans-serif;
                 color: black;
                 transition: 0.25s;
-                font-size: 24;
-                font-weight: 500;
+                // font-size: 24;
+                // font-weight: 500;
 
                 &:hover, &:active{
                     color: $navy;

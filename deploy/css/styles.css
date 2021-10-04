@@ -415,7 +415,7 @@ nav ul {
   font-family: Heebo;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 35px;
 }
 nav ul li {
@@ -425,8 +425,6 @@ nav ul li a:link, nav ul li a:visited {
   font-family: "Heebo", sans-serif;
   color: black;
   transition: 0.25s;
-  font-size: 24;
-  font-weight: 500;
 }
 nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
   color: #001A76;
@@ -484,7 +482,7 @@ footer {
 #hero > div #hero-content {
   color: white;
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
 }
 #hero > div #hero-content h1 {
@@ -510,7 +508,7 @@ footer {
 }
 @media (min-width: 1024px) {
   #hero > div #hero-content {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 
