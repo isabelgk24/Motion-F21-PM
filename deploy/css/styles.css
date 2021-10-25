@@ -453,6 +453,38 @@ footer {
   background-color: black;
 }
 
+#preloader {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto 90vw auto;
+  grid-template-areas: ". preloader .";
+}
+@media (min-width: 768px) {
+  #preloader {
+    grid-template-columns: auto 70vw auto;
+  }
+}
+@media (min-width: 1024px) {
+  #preloader {
+    grid-template-columns: auto 60vw auto;
+  }
+}
+@media (min-width: 1440px) {
+  #preloader {
+    grid-template-columns: auto 50vw auto;
+  }
+}
+#preloader > div {
+  grid-area: preloader;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 #hero {
   height: 80vh;
   width: 100%;
