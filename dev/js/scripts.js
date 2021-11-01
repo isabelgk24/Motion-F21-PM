@@ -19,16 +19,40 @@ function mountainSlide(){
     return tl;
 }
 
-function lightAppear(){
+function lampAppear(){
     const tl = gsap.timeline();
     tl.from(".lamp",{duration: 1.5, alpha:0, stagger: 0.5});
 
     return tl;
 }
 
+function moonRise(){
+    const tl = gsap.timeline();
+    tl.from("#moon",{duration: 4.0, y:"+=150", alpha:0, rotation:90});
+
+    return tl;
+}
+
+function lightAppear(){
+    const tl = gsap.timeline();
+    tl.from(".lightbulb",{duration: 2, alpha:0, stagger: .5});
+
+    return tl;
+}
+
+function glowAppear(){
+    const tl = gsap.timeline();
+    tl.from(".glow",{duration: 2, alpha:0, stagger: .5});
+
+    return tl;
+}
+
 mainTL.add(appear())
         .add(mountainSlide())
-        .add(lightAppear());
+        .add(lampAppear())
+        .add(moonRise())
+        .add(lightAppear())
+        .add(glowAppear());
 
 
 
