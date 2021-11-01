@@ -47,12 +47,20 @@ function glowAppear(){
     return tl;
 }
 
+function starsAppear(){
+    const tl = gsap.timeline();
+    tl.from("#Stars",{duration: 3, y:"+=20", alpha:0, stagger: .1});
+
+    return tl;
+}
+
 mainTL.add(appear())
         .add(mountainSlide())
         .add(lampAppear())
         .add(moonRise())
         .add(lightAppear())
-        .add(glowAppear());
+        .add(glowAppear())
+        .add(starsAppear());
 
 
 
