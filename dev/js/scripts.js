@@ -14,7 +14,7 @@ function appear(){
 
 function mountainSlide(){
     const tl = gsap.timeline();
-    tl.from(".mountains",{duration: 0.5, y:"+=50", alpha:0, stagger: 0.25});
+    tl.from(".mountains",{duration: 0.5, y:"+=50", alpha:0, stagger: -0.25});
 
     return tl;
 }
@@ -28,28 +28,36 @@ function lampAppear(){
 
 function moonRise(){
     const tl = gsap.timeline();
-    tl.from("#moon",{duration: 4.0, y:"+=150", alpha:0, rotation:90});
+    tl.from("#moon",{duration: 4.0, y:"+=150", alpha:0, rotation:90, transformOrigin: "50% 50%"}, "same");
 
     return tl;
 }
 
 function lightAppear(){
     const tl = gsap.timeline();
-    tl.from(".lightbulb",{duration: 2, alpha:0, stagger: .5});
+    tl.from(".lightbulb",{duration: 2, alpha:0, stagger: .5},"same");
 
     return tl;
 }
 
 function glowAppear(){
     const tl = gsap.timeline();
-    tl.from(".glow",{duration: 2, alpha:0, stagger: .5});
+    tl.from(".glow",{duration: 2, alpha:0, stagger: .5}, "same");
 
     return tl;
 }
 
+
+const glowFlicker = gsap.timeline({repeat:100});
+glowFlicker.to("#glow1",{duration:0.2,alpha:0.3})
+.to("#glow1",{duration:0.2,alpha:0.7})
+.to("#glow1",{duration:0.2,alpha:0.2});
+
+
+
 function starsAppear(){
     const tl = gsap.timeline();
-    tl.from("#Stars",{duration: 3, y:"+=20", alpha:0, stagger: .1});
+    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1});
 
     return tl;
 }
@@ -58,8 +66,8 @@ mainTL.add(appear())
         .add(mountainSlide())
         .add(lampAppear())
         .add(moonRise())
-        .add(lightAppear())
-        .add(glowAppear())
+        .add(lightAppear(),"sameTime")
+        .add(glowAppear(),"sameTime")
         .add(starsAppear());
 
 
