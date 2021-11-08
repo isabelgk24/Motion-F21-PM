@@ -48,10 +48,13 @@ function glowAppear(){
 }
 
 
-const glowFlicker = gsap.timeline({repeat:100});
-glowFlicker.to("#glow1",{duration:0.2,alpha:0.3})
-.to("#glow1",{duration:0.2,alpha:0.7})
-.to("#glow1",{duration:0.2,alpha:0.2});
+const glowFlicker = gsap.timeline({repeat:20});
+glowFlicker.to("#glow1",{duration:0.2,alpha:0.5})
+.to("#glow1",{duration:0.1,alpha:0.7})
+.to("#glow1",{duration:0.3,alpha:0.4})
+.to("#glow1",{duration:0.1,alpha:0.6})
+.to("#glow1",{duration:0.1,alpha:0.5})
+.to("#glow1",{duration:0.2,alpha:0.6});
 
 
 
