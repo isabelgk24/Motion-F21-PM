@@ -1,13 +1,15 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
-gsap.registerPlugin(GSDevTools);
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 const mainTL = gsap.timeline();
 
 function appear(){
     const tl = gsap.timeline();
-    tl.from("#Road",{duration: 0.5, y:"-=25", alpha:0});
+    tl.from("#Road",{duration: 0.5, y:"-=25", alpha:0})
+    tl.from("#grass-morph-right",{duration: 0.5, y:"-=50", alpha:0});
 
     return tl;
 }
@@ -48,7 +50,7 @@ function glowAppear(){
 }
 
 
-const glowFlicker = gsap.timeline({repeat:20});
+const glowFlicker = gsap.timeline({repeat:10}, "same");
 glowFlicker.to("#glow1",{duration:0.2,alpha:0.5})
 .to("#glow1",{duration:0.1,alpha:0.7})
 .to("#glow1",{duration:0.3,alpha:0.4})
@@ -56,11 +58,36 @@ glowFlicker.to("#glow1",{duration:0.2,alpha:0.5})
 .to("#glow1",{duration:0.1,alpha:0.5})
 .to("#glow1",{duration:0.2,alpha:0.6});
 
+const glowFlicker2 = gsap.timeline({repeat:10}, "same");
+glowFlicker2.to("#glow2",{duration:0.2,alpha:0.5})
+.to("#glow2",{duration:0.1,alpha:0.6})
+.to("#glow2",{duration:0.1,alpha:0.5})
+.to("#glow2",{duration:0.2,alpha:0.6})
+.to("#glow2",{duration:0.1,alpha:0.7})
+.to("#glow2",{duration:0.3,alpha:0.4});
+
+const glowFlicker3 = gsap.timeline({repeat:10}, "same");
+glowFlicker3.to("#glow2",{duration:0.2,alpha:0.5})
+.to("#glow3",{duration:0.2,alpha:0.8})
+.to("#glow3",{duration:0.1,alpha:0.4})
+.to("#glow3",{duration:0.1,alpha:0.6})
+.to("#glow3",{duration:0.2,alpha:0.9})
+.to("#glow3",{duration:0.2,alpha:0.4});
+
+const glowFlicker4 = gsap.timeline({repeat:10}, "same");
+glowFlicker4.to("#glow4",{duration:0.2,alpha:0.5})
+.to("#glow4",{duration:0.1,alpha:0.7})
+.to("#glow4",{duration:0.3,alpha:0.4})
+.to("#glow4",{duration:0.1,alpha:0.6})
+.to("#glow4",{duration:0.1,alpha:0.5})
+.to("#glow4",{duration:0.2,alpha:0.6});
+
+
 
 
 function starsAppear(){
     const tl = gsap.timeline();
-    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1});
+    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1}, "same");
 
     return tl;
 }
@@ -68,10 +95,10 @@ function starsAppear(){
 mainTL.add(appear())
         .add(mountainSlide())
         .add(lampAppear())
-        .add(moonRise())
+        .add(moonRise(),"sameTime")
         .add(lightAppear(),"sameTime")
         .add(glowAppear(),"sameTime")
-        .add(starsAppear());
+        .add(starsAppear(),"sameTime");
 
 
 
