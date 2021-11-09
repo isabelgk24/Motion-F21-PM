@@ -49,9 +49,12 @@ function glowAppear(){
     return tl;
 }
 
+function glowFlicker(){
+
+    const tl = gsap.timeline();
 
 const glowFlicker = gsap.timeline({repeat:10}, "same");
-glowFlicker.to("#glow1",{duration:0.2,alpha:0.5})
+glowFlicker.from("#glow1",{duration:0.2,alpha:0})
 .to("#glow1",{duration:0.1,alpha:0.7})
 .to("#glow1",{duration:0.3,alpha:0.4})
 .to("#glow1",{duration:0.1,alpha:0.6})
@@ -59,28 +62,34 @@ glowFlicker.to("#glow1",{duration:0.2,alpha:0.5})
 .to("#glow1",{duration:0.2,alpha:0.6});
 
 const glowFlicker2 = gsap.timeline({repeat:10}, "same");
-glowFlicker2.to("#glow2",{duration:0.2,alpha:0.5})
+glowFlicker2.from("#glow2",{duration:0.2,alpha:0})
 .to("#glow2",{duration:0.1,alpha:0.6})
 .to("#glow2",{duration:0.1,alpha:0.5})
 .to("#glow2",{duration:0.2,alpha:0.6})
 .to("#glow2",{duration:0.1,alpha:0.7})
 .to("#glow2",{duration:0.3,alpha:0.4});
 
-const glowFlicker3 = gsap.timeline({repeat:10}, "same");
-glowFlicker3.to("#glow2",{duration:0.2,alpha:0.5})
-.to("#glow3",{duration:0.2,alpha:0.8})
-.to("#glow3",{duration:0.1,alpha:0.4})
-.to("#glow3",{duration:0.1,alpha:0.6})
-.to("#glow3",{duration:0.2,alpha:0.9})
-.to("#glow3",{duration:0.2,alpha:0.4});
+// const glowFlicker3 = gsap.timeline({repeat:10}, "same");
+// glowFlicker3.to("#glow2",{duration:0.2,alpha:0.5})
+// .to("#glow3",{duration:0.2,alpha:0.8})
+// .to("#glow3",{duration:0.1,alpha:0.4})
+// .to("#glow3",{duration:0.1,alpha:0.6})
+// .to("#glow3",{duration:0.2,alpha:0.9})
+// .to("#glow3",{duration:0.2,alpha:0.4});
 
-const glowFlicker4 = gsap.timeline({repeat:10}, "same");
-glowFlicker4.to("#glow4",{duration:0.2,alpha:0.5})
-.to("#glow4",{duration:0.1,alpha:0.7})
-.to("#glow4",{duration:0.3,alpha:0.4})
-.to("#glow4",{duration:0.1,alpha:0.6})
-.to("#glow4",{duration:0.1,alpha:0.5})
-.to("#glow4",{duration:0.2,alpha:0.6});
+// const glowFlicker4 = gsap.timeline({repeat:10}, "same");
+// glowFlicker4.to("#glow4",{duration:0.2,alpha:0.5})
+// .to("#glow4",{duration:0.1,alpha:0.7})
+// .to("#glow4",{duration:0.3,alpha:0.4})
+// .to("#glow4",{duration:0.1,alpha:0.6})
+// .to("#glow4",{duration:0.1,alpha:0.5})
+// .to("#glow4",{duration:0.2,alpha:0.6});
+
+tl.add(glowFlicker,"same")
+.add(glowFlicker2,"same")
+
+    return tl;
+}
 
 
 
@@ -98,7 +107,8 @@ mainTL.add(appear())
         .add(moonRise(),"sameTime")
         .add(lightAppear(),"sameTime")
         .add(glowAppear(),"sameTime")
-        .add(starsAppear(),"sameTime");
+        .add(starsAppear(),"sameTime")
+        .add(glowFlicker(),"-=25%");
 
 
 
