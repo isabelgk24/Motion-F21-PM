@@ -352,6 +352,10 @@ template {
   z-index: 15000;
 }
 
+.hide {
+  display: none;
+}
+
 figure {
   margin: 0;
   padding: 0;
