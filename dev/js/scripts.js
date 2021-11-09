@@ -44,7 +44,7 @@ function glowFlicker(){
     .to("#glow2",{duration:0.3,alpha:0.7});
 
     const glowFlicker3 = gsap.timeline({repeat: 2}, "same2");
-    glowFlicker3.to("#glow2",{duration:0.2,alpha:0.5})
+    glowFlicker3.to("#glow3",{duration:0.2,alpha:0.5})
     .to("#glow3",{duration:0.3,alpha:0.8})
     .to("#glow3",{duration:0.4,alpha:0.6})
     .to("#glow3",{duration:0.2,alpha:0.7})
@@ -63,12 +63,11 @@ function glowFlicker(){
       .add(glowFlicker2,"same2")
       .add(glowFlicker3,"same2")
       .add(glowFlicker4,"same2")
-
-
+      
     return tl;
 }
 
 mainTL.add(appear())
-        .add(glowFlicker(),"-=85%");
+        .add(glowFlicker(),"-=83%");
 
 GSDevTools.create();
