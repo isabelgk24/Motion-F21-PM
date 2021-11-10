@@ -80,11 +80,9 @@ function backToTop (){
 function heroAnimation (){
     const tl = gsap.timeline();
 
-    // const heroHeight = document.querySelector("#hero");
-
     const aniTime = 0.75;
 
-    tl.from("#hero",{duration:2, alpha:0})
+    tl.from("#hero",{duration:1, alpha:0})
       .from("#hero h1", {duration:aniTime, y:"+=200", alpha:0})
       .from("#hero i", {duration:aniTime, y:"-=200", alpha:0, rotation:180})
       .from("#content1 ul li i",{duration:aniTime, y:"+=10", alpha:0})
@@ -94,6 +92,6 @@ function heroAnimation (){
 
 mainTL.add(appear())
         .add(glowFlicker(),"-=47%")
-        .add(heroAnimation(), "-=115%");
+        .add(heroAnimation(), "-=150%");
 
 GSDevTools.create();
