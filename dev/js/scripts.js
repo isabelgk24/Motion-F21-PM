@@ -20,7 +20,8 @@ function appear(){
     tl.from("#moon",{duration: 4.0, y:"+=150", alpha:0, rotation:90, transformOrigin: "50% 50%"}, "same")
     tl.from(".lightbulb",{duration: 2, alpha:0, stagger: .5},"same")
     tl.from(".glow",{duration: 2, alpha:0, stagger: .5}, "same")
-    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1}, "same");
+    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1}, "same")
+    tl.to("#preloader",{duration: .25, scale:0, alpha:0});
 
     return tl;
 }
@@ -71,16 +72,28 @@ function glowFlicker(){
     return tl;
 }
 
-// function shrink (){
-//   const tl = gsap.timeline();
-// }
-
 function backToTop (){
-  window.scrollTo(0,0)
-  gsap.set("#preloader", {display:"none"});
+    window.scrollTo(0,0)
+    gsap.set("#preloader", {display:"none"});
+}
+
+function heroAnimation (){
+    const tl = gsap.timeline();
+
+    // const heroHeight = document.querySelector("#hero");
+
+    const aniTime = 0.75;
+
+    tl.from("#hero",{duration:2, alpha:0})
+      .from("#hero h1", {duration:aniTime, y:"+=200", alpha:0})
+      .from("#hero i", {duration:aniTime, y:"-=200", alpha:0, rotation:180})
+      .from("#content1 ul li i",{duration:aniTime, y:"+=10", alpha:0})
+
+    return tl;
 }
 
 mainTL.add(appear())
-        .add(glowFlicker(),"-=40%");
+        .add(glowFlicker(),"-=47%")
+        .add(heroAnimation(), "-=115%");
 
 GSDevTools.create();
