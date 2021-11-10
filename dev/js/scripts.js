@@ -28,36 +28,40 @@ function appear(){
 function glowFlicker(){
     const tl = gsap.timeline();
 
-    const glowFlicker = gsap.timeline({repeat: 2}, "same2");
-    glowFlicker.from("#glow1",{duration:0.2,alpha:0})
-    .to("#glow1",{duration:0.3,alpha:0.7})
-    .to("#glow1",{duration:0.4,alpha:0.6})
-    .to("#glow1",{duration:0.2,alpha:0.5})
-    .to("#glow1",{duration:0.3,alpha:0.6})
-    .to("#glow1",{duration:0.3,alpha:0.7});
+    const glowFlicker = gsap.timeline({repeat: 1},"same2");
+    glowFlicker.from("#glow1",{duration:0,alpha:0})
+    .to("#glow1",{duration:0.4,alpha:0.7})
+    .to("#glow1",{duration:1.0,alpha:0.4})
+    .to("#glow1",{duration:0.7,alpha:0.6})
+    .to("#glow1",{duration:0.5,alpha:0.9})
+    .to("#glow1",{duration:0.9,alpha:0.4})
+    .to("#glow1",{duration:1.5,alpha:0.7});
 
-    const glowFlicker2 = gsap.timeline({repeat: 2}, "same2");
-    glowFlicker2.from("#glow2",{duration:0.2,alpha:0})
-    .to("#glow2",{duration:0.4,alpha:0.6})
-    .to("#glow2",{duration:0.5,alpha:0.5})
-    .to("#glow2",{duration:0.3,alpha:0.6})
-    .to("#glow2",{duration:0.3,alpha:0.7});
+    const glowFlicker2 = gsap.timeline({repeat: 1},"same2");
+    glowFlicker2.from("#glow2",{duration:0,alpha:0})
+    .to("#glow2",{duration:0.8,alpha:0.7})
+    .to("#glow2",{duration:1.0,alpha:0.9})
+    .to("#glow2",{duration:0.7,alpha:0.4})
+    .to("#glow2",{duration:0.9,alpha:0.6})
+    .to("#glow2",{duration:1.1,alpha:0.2});
 
-    const glowFlicker3 = gsap.timeline({repeat: 2}, "same2");
-    glowFlicker3.to("#glow3",{duration:0.2,alpha:0.5})
-    .to("#glow3",{duration:0.3,alpha:0.8})
-    .to("#glow3",{duration:0.4,alpha:0.6})
-    .to("#glow3",{duration:0.2,alpha:0.7})
-    .to("#glow3",{duration:0.2,alpha:0.9})
-    .to("#glow3",{duration:0.4,alpha:0.8});
+    const glowFlicker3 = gsap.timeline({repeat: 1},"same2");
+    glowFlicker3.from("#glow3",{duration:0,alpha:0})
+    .to("#glow3",{duration:0.6,alpha:0.7})
+    .to("#glow3",{duration:0.7,alpha:1.0})
+    .to("#glow3",{duration:1.0,alpha:0.8})
+    .to("#glow3",{duration:0.5,alpha:0.7})
+    .to("#glow3",{duration:1.5,alpha:0.5})
+    .to("#glow3",{duration:0.7,alpha:0.8});
 
-    const glowFlicker4 = gsap.timeline({repeat: 2}, "same2");
-    glowFlicker4.to("#glow4",{duration:0.2,alpha:0.5})
-    .to("#glow4",{duration:0.5,alpha:0.7})
-    .to("#glow4",{duration:0.3,alpha:0.8})
-    .to("#glow4",{duration:0.2,alpha:0.9})
-    .to("#glow4",{duration:0.3,alpha:0.8})
-    .to("#glow4",{duration:0.2,alpha:0.7});
+    const glowFlicker4 = gsap.timeline({repeat: 1}, "same2");
+    glowFlicker4.from("#glow4",{duration:0,alpha:0})
+    .to("#glow4",{duration:1.5,alpha:0.7})
+    .to("#glow4",{duration:0.6,alpha:0.4})
+    .to("#glow4",{duration:1.0,alpha:0.6})
+    .to("#glow4",{duration:0.4,alpha:0.9})
+    .to("#glow4",{duration:0.9,alpha:0.6})
+    .to("#glow4",{duration:0.6,alpha:0.7, onComplete: backToTop});
 
     tl.add(glowFlicker,"same2")
       .add(glowFlicker2,"same2")
@@ -67,7 +71,16 @@ function glowFlicker(){
     return tl;
 }
 
+// function shrink (){
+//   const tl = gsap.timeline();
+// }
+
+function backToTop (){
+  window.scrollTo(0,0)
+  gsap.set("#preloader", {display:"none"});
+}
+
 mainTL.add(appear())
-        .add(glowFlicker(),"-=83%");
+        .add(glowFlicker(),"-=40%");
 
 GSDevTools.create();
