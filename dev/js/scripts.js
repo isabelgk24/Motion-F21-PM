@@ -11,16 +11,16 @@ const mainTL = gsap.timeline();
 
 function appear(){
     const tl = gsap.timeline();
-    tl.from("#Road",{duration: 0.5, y:"-=25", alpha:0})
-    tl.from("#Grassright",{duration: 0.5, alpha:0, morphSVG: "#grass-morph-right"}, "same1")
-    tl.from("#Grassleft",{duration: 0.5, alpha:0, morphSVG: "#grass-morph-left"}, "same1")
+    tl.from("#road",{duration: 0.5, y:"-=25", alpha:0})
+    tl.from("#grassright",{duration: 0.5, alpha:0, morphSVG: "#grass-morph-right"}, "same1")
+    tl.from("#grassleft",{duration: 0.5, alpha:0, morphSVG: "#grass-morph-left"}, "same1")
     tl.from(".mountains",{duration: 0.5, y:"+=50", alpha:0, stagger: -0.25})
-    tl.from("#Sky",{duration: 0.5, alpha:0, morphSVG: "#sky-pre-morph"})
+    tl.from("#sky",{duration: 0.5, alpha:0, morphSVG: "#sky-pre-morph"})
     tl.from(".lamp",{duration: 1, alpha:0, stagger: 0.25}, "same")
     tl.from("#moon",{duration: 4.0, y:"+=150", alpha:0, rotation:90, transformOrigin: "50% 50%"}, "same")
     tl.from(".lightbulb",{duration: 2, alpha:0, stagger: .5},"same")
     tl.from(".glow",{duration: 2, alpha:0, stagger: .5}, "same")
-    tl.from("#Stars",{duration: 3, y:"+=5", alpha:0, stagger: .1}, "same")
+    tl.from("#stars",{duration: 3, y:"+=5", alpha:0, stagger: .1}, "same")
     tl.to("#preloader",{duration: .25, scale:0, alpha:0});
 
     return tl;
@@ -94,4 +94,4 @@ mainTL.add(appear())
         .add(glowFlicker(),"-=47%")
         .add(heroAnimation(), "-=150%");
 
-GSDevTools.create();
+// GSDevTools.create();
