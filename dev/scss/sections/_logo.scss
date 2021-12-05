@@ -1,0 +1,33 @@
+#logo{
+
+    position: top right;
+    height: 100vh;
+    // width: 100%;
+    z-index: 1000;
+    background-color: $darkpurple;
+
+    // CSS grid
+    display: grid;
+    grid-template-columns: auto 100vw;
+    grid-template-areas: ". logo";
+
+    @include md{
+        grid-template-columns: auto 90vw;
+    }
+
+    @include xl{
+        grid-template-columns: auto 80vw;
+    }
+
+    >div{
+
+        grid-area: logo;
+        height: 100%; 
+
+        svg{
+            
+        }
+
+    }
+
+}
