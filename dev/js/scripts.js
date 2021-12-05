@@ -1,15 +1,18 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MotionPathHelper } from "gsap/MotionPathHelper";
 
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, MotionPathHelper);
 
 MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 
+
 const mainTL = gsap.timeline();
 
-function appear(){
+function barmorph(){
     const tl = gsap.timeline();
     tl.from("#.balls",{duration: 0.5, y:"-=25", alpha:0, morphSVG:".bars"});
 
@@ -17,7 +20,7 @@ function appear(){
 
 }
 
-mainTL.add((appear));
+mainTL.add(barmorph());
 
 GSDevTools.create();
 
