@@ -444,3 +444,6 @@ textarea {
   grid-area: logo;
   height: 100%;
 }
+#logo > div svg {
+  width: 100%;
+}
