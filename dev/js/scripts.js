@@ -9,7 +9,15 @@ MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 const mainTL = gsap.timeline();
 
-// mainTL.add(());
+function appear(){
+    const tl = gsap.timeline();
+    tl.from("#.balls",{duration: 0.5, y:"-=25", alpha:0, morphSVG:".bars"});
+
+    return tl;
+
+}
+
+mainTL.add((appear));
 
 GSDevTools.create();
 
