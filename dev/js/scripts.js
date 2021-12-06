@@ -52,10 +52,11 @@ function barSlide(){
 
 }
 
-function cgMorph(){
+function secondaryMoments(){
     const tl = gsap.timeline();
     tl.to("#c-morph",{duration: .4, morphSVG:"#c"}, "same3")
-    tl.to("#g-morph",{duration: .4, morphSVG:"#g"}, "same3");
+    tl.to("#g-morph",{duration: .4, morphSVG:"#g"}, "same3")
+    tl.from("#bar-underline-draw",{duration: 1.5, drawSVG:0});
 
     return tl;
 
@@ -63,19 +64,18 @@ function cgMorph(){
 
 function slideOut(){
     const tl = gsap.timeline();
-    tl.to("#bar-draw-underline",{duration: .4, drawSVG:"0% 100%"})
+    tl.to("#bar-1", {duration: 4, motionPath:{path:"#bar-1-draw", align:"#bar-1-draw", ease:"power4out"}})
+    tl.from("#bar-2-draw",{duration: 1.5, drawSVG:0}, "same4");
 
     return tl;
 
 
 }
 
-
-
 mainTL.add(bounceIn())
         .add(barMorph())
         .add(barSlide())
-        .add(cgMorph(),"-=50%")
+        .add(secondaryMoments(),"-=50%")
         .add(slideOut());
 
 GSDevTools.create();
