@@ -14,7 +14,7 @@ const mainTL = gsap.timeline();
 
 function barmorph(){
     const tl = gsap.timeline();
-    tl.from("#.balls",{duration: 0.5, y:"-=25", alpha:0, morphSVG:".bars"});
+    tl.from(".balls",{duration: 4, y:"-=600", alpha:0, morphSVG:".bars"});
 
     return tl;
 
