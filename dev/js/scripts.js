@@ -2,9 +2,10 @@ import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { MotionPathHelper } from "gsap/MotionPathHelper";
 
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, MotionPathHelper);
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, MotionPathHelper, MotionPathPlugin);
 
 MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
@@ -14,14 +15,16 @@ const mainTL = gsap.timeline();
 
 function bounceIn(){
     const tl = gsap.timeline();
-    tl.from("#ball-1",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"})
-    tl.from("#ball-2",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"}, "-=50%")
-    tl.from("#ball-3",{duration: 1.75, y:"-=600", alpha:0, ease:"bounce.out"}, "-=75%")
-    tl.from("#ball-4",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"})
-    tl.from("#ball-5",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"}, "-=85%")
-    tl.from("#ball-6",{duration: 1.5, y:"-=600", alpha:0, ease:"bounce.out"}, "-=50%")
-    tl.from("#ball-7",{duration: 1.75, y:"-=800", alpha:0, ease:"bounce.out"}, "-=75%")
-;
+    tl.to("#ball-1", {duration: 1.5, alpha:100, motionPath: {path: "#bounce-1", align: "#bounce-1", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"});
+
+//     tl.from("#ball-1",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"})
+//     tl.from("#ball-2",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"}, "-=50%")
+//     tl.from("#ball-3",{duration: 1.75, y:"-=600", alpha:0, ease:"bounce.out"}, "-=75%")
+//     tl.from("#ball-4",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"})
+//     tl.from("#ball-5",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"}, "-=85%")
+//     tl.from("#ball-6",{duration: 1.5, y:"-=600", alpha:0, ease:"bounce.out"}, "-=50%")
+//     tl.from("#ball-7",{duration: 1.75, y:"-=800", alpha:0, ease:"bounce.out"}, "-=75%")
+// ;
 
     return tl;
 
@@ -64,7 +67,7 @@ function secondaryMoments(){
 
 function slideOut(){
     const tl = gsap.timeline();
-    tl.to("#bar-1", {duration: 4, motionPath:{path:"#bar-1-draw", align:"#bar-1-draw", ease:"power4out"}})
+    tl.to("#bar-1", {duration: 4, motionPath:{path:"#bar-1-draw", align:"#bar-1-draw", alignOrigin:[0.5,0.5]}})
     tl.from("#bar-2-draw",{duration: 1.5, drawSVG:0}, "same4");
 
     return tl;
