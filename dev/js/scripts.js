@@ -12,7 +12,22 @@ MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 const mainTL = gsap.timeline();
 
-function barmorph(){
+function bounceIn(){
+    const tl = gsap.timeline();
+    tl.from("#ball-1",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"})
+    tl.from("#ball-2",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"}, "-=50%")
+    tl.from("#ball-3",{duration: 1.75, y:"-=600", alpha:0, ease:"bounce.out"}, "-=75%")
+    tl.from("#ball-4",{duration: 1.5, y:"-=700", alpha:0, ease:"bounce.out"})
+    tl.from("#ball-5",{duration: 2, y:"-=800", alpha:0, ease:"bounce.out"}, "-=85%")
+    tl.from("#ball-6",{duration: 1.5, y:"-=600", alpha:0, ease:"bounce.out"}, "-=50%")
+    tl.from("#ball-7",{duration: 1.75, y:"-=800", alpha:0, ease:"bounce.out"}, "-=75%")
+;
+
+    return tl;
+
+}
+
+function barMorph(){
     const tl = gsap.timeline();
     tl.to("#ball-1",{duration: .55, morphSVG:"#bar-1"}, "same1")
     tl.to("#ball-2",{duration: .45, morphSVG:"#bar-2"}, "same1")
@@ -26,7 +41,7 @@ function barmorph(){
 
 }
 
-function barslide(){
+function barSlide(){
     const tl = gsap.timeline();
     tl.to("#ball-2",{duration: .75, y:"+=30"}, "same2")
     tl.to("#ball-3",{duration: .75, y:"+=15"}, "same2")
@@ -37,7 +52,7 @@ function barslide(){
 
 }
 
-function cgmorph(){
+function cgMorph(){
     const tl = gsap.timeline();
     tl.to("#c-morph",{duration: .4, morphSVG:"#c"}, "same3")
     tl.to("#g-morph",{duration: .4, morphSVG:"#g"}, "same3");
@@ -46,11 +61,22 @@ function cgmorph(){
 
 }
 
+function slideOut(){
+    const tl = gsap.timeline();
+    tl.to("#bar-draw-underline",{duration: .4, drawSVG:"0% 100%"})
+
+    return tl;
 
 
-mainTL.add(barmorph())
-        .add(barslide())
-        .add(cgmorph(),"-=50%");
+}
+
+
+
+mainTL.add(bounceIn())
+        .add(barMorph())
+        .add(barSlide())
+        .add(cgMorph(),"-=50%")
+        .add(slideOut());
 
 GSDevTools.create();
 
