@@ -14,13 +14,43 @@ const mainTL = gsap.timeline();
 
 function barmorph(){
     const tl = gsap.timeline();
-    tl.from(".balls",{duration: 4, y:"-=600", alpha:0, morphSVG:".bars"});
+    tl.to("#ball-1",{duration: .55, morphSVG:"#bar-1"}, "same1")
+    tl.to("#ball-2",{duration: .45, morphSVG:"#bar-2"}, "same1")
+    tl.to("#ball-3",{duration: .35, morphSVG:"#bar-3"}, "same1")
+    tl.to("#ball-4",{duration: .45, morphSVG:"#bar-4"}, "same1")
+    tl.to("#ball-5",{duration: .55, morphSVG:"#bar-5"}, "same1")
+    tl.to("#ball-6",{duration: .35, morphSVG:"#bar-6"}, "same1")
+    tl.to("#ball-7",{duration: .55, morphSVG:"#bar-7"}, "same1");
 
     return tl;
 
 }
 
-mainTL.add(barmorph());
+function barslide(){
+    const tl = gsap.timeline();
+    tl.to("#ball-2",{duration: .75, y:"+=30"}, "same2")
+    tl.to("#ball-3",{duration: .75, y:"+=15"}, "same2")
+    tl.to("#ball-4",{duration: .75, y:"-=25"}, "same2")
+    tl.to("#ball-6",{duration: .75, y:"+=15"}, "same2");
+
+    return tl;
+
+}
+
+function cgmorph(){
+    const tl = gsap.timeline();
+    tl.to("#c-morph",{duration: .4, morphSVG:"#c"}, "same3")
+    tl.to("#g-morph",{duration: .4, morphSVG:"#g"}, "same3");
+
+    return tl;
+
+}
+
+
+
+mainTL.add(barmorph())
+        .add(barslide())
+        .add(cgmorph(),"-=50%");
 
 GSDevTools.create();
 
