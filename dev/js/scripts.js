@@ -15,13 +15,13 @@ const mainTL = gsap.timeline();
 
 function bounceIn(){
     const tl = gsap.timeline();
-    tl.to("#ball-1", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-1", align: "#bounce-1", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"})
-    tl.to("#ball-2", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-2", align: "#bounce-2", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"})
-    tl.to("#ball-3", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-3", align: "#bounce-3", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"})
-    tl.to("#ball-4", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-4", align: "#bounce-4",  ease: "power3.inOut"}})
-    tl.to("#ball-5", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-5", align: "#bounce-5", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"})
-    tl.to("#ball-6", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-6", align: "#bounce-6", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"})
-    tl.to("#ball-7", {duration: 1.5, alpha:1, motionPath: {path: "#bounce-7", align: "#bounce-7", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"});
+    tl.to("#ball-1", {duration: 2.5, alpha:1, motionPath: {path: "#bounce-1", align: "#bounce-1", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"}, "same")
+    tl.to("#ball-2", {duration: 3, alpha:1, motionPath: {path: "#bounce-2", align: "#bounce-2", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same")
+    tl.to("#ball-3", {duration: 2.7, alpha:1, motionPath: {path: "#bounce-3", align: "#bounce-3", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same")
+    tl.to("#ball-4", {duration: 2.7, alpha:1, motionPath: {path: "#bounce-4", align: "#bounce-4", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same")
+    tl.to("#ball-5", {duration: 3, alpha:1, motionPath: {path: "#bounce-5", align: "#bounce-5", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same")
+    tl.to("#ball-6", {duration: 2.7, alpha:1, motionPath: {path: "#bounce-6", align: "#bounce-6", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same")
+    tl.to("#ball-7", {duration: 3, alpha:1, motionPath: {path: "#bounce-7", align: "#bounce-7", alignOrigin: [0.5, 0.5]}, ease: "power3.inOut"} , "same");
 
     return tl;
 
@@ -64,12 +64,16 @@ function secondaryMoments(){
 
 function slideOut(){
     const tl = gsap.timeline();
-    tl.to("#bar-1", {duration: 4, motionPath:{path:"#bar-1-draw", align:"#bar-1-draw", alignOrigin:[0.5,0.5]}})
-    tl.from("#bar-2-draw",{duration: 1.5, drawSVG:0}, "same4");
+    tl.to("#ball-1",{duration: 1.2, y:"-=1100", alpha:0}, "same4")
+    tl.to("#ball-2",{duration: 1.5, y:"+=1000", alpha:0}, "same4")
+    tl.to("#ball-3",{duration: 1.3, y:"-=1400", alpha:0}, "same4")
+    tl.to("#ball-4",{duration: 1, y:"+=1200", alpha:0}, "same4")
+    tl.to("#ball-5",{duration: 1.5, y:"-=1000", alpha:0}, "same4")
+    tl.to("#ball-6",{duration: 1.2, y:"-=1100", alpha:0}, "same4")
+    tl.to("#ball-7",{duration: 1, y:"+=1200", alpha:0}, "same4");
 
     return tl;
-
-
+    
 }
 
 mainTL.add(bounceIn())
