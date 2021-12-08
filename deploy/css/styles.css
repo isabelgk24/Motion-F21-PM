@@ -422,23 +422,10 @@ textarea {
     Footer
 ============= */
 #logo {
-  position: top right;
+  position: left;
   height: 100vh;
   z-index: 1000;
   background-color: #2E2E82;
-  display: grid;
-  grid-template-columns: auto 100vw;
-  grid-template-areas: ". logo";
-}
-@media (min-width: 768px) {
-  #logo {
-    grid-template-columns: auto 90vw;
-  }
-}
-@media (min-width: 1200px) {
-  #logo {
-    grid-template-columns: auto 80vw;
-  }
 }
 #logo > div {
   grid-area: logo;

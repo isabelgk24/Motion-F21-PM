@@ -1,22 +1,22 @@
 #logo{
 
-    position: top right;
+    position: left;
     height: 100vh;
     z-index: 1000;
     background-color: $darkpurple;
 
     // CSS grid
-    display: grid;
-    grid-template-columns: auto 100vw;
-    grid-template-areas: ". logo";
+    // display: grid;
+    // grid-template-columns: 100vw auto;
+    // grid-template-areas: "logo .";
 
-    @include md{
-        grid-template-columns: auto 90vw;
-    }
+    // @include md{
+    //     grid-template-columns: 90vw auto;
+    // }
 
-    @include xl{
-        grid-template-columns: auto 80vw;
-    }
+    // @include xl{
+    //     grid-template-columns: 80vw auto;
+    // }
 
     >div{
 
